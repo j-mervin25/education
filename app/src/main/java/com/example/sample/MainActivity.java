@@ -26,10 +26,13 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.content.IntentSender;
 
 public class MainActivity extends AppCompatActivity {
+
+    FloatingActionButton fab;
 
     private static final String TAG = "MainActivity";
     private static final int REQ_ONE_TAP = 100;
@@ -45,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fab=findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, uploadActivity.class);
+                startActivity(intent);
+            }
+        });
 
         textView = findViewById(R.id.textView1);
 
