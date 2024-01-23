@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -33,6 +34,7 @@ public class uploadActivity extends AppCompatActivity {
     ImageView uploadImage;
     Button b1;
     EditText e1, e2;
+    TextView t1;
     String imageURL;
     Uri uri;
 
@@ -48,6 +50,7 @@ public class uploadActivity extends AppCompatActivity {
         e1 = findViewById(R.id.editText1);
         e2 = findViewById(R.id.editText2);
         b1 = findViewById(R.id.button1);
+        t1 = findViewById(R.id.textView2);
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -77,6 +80,14 @@ public class uploadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveData();
+            }
+        });
+        t1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(uploadActivity.this, ViewProfileActivity.class);
+                startActivity(intent);
             }
         });
     }

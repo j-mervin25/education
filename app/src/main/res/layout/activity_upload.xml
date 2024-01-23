@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         app:cardCornerRadius="30dp"
@@ -20,46 +21,66 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="center"
             android:padding="20dp"
             android:background="@drawable/lavender_border">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Dtaa"
+                android:text="Upload Data"
                 android:textSize="30sp"
                 android:textAlignment="center"
                 android:textColor="@color/lavender"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/img"
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/uploadImage"
-                android:layout_marginTop="10dp"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
                 android:background="@color/lavender"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:src="@drawable/img"
+                app:shapeAppearanceOverlay="@style/circular" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstNameInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/editText1"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="16dp"
-                android:hint="First Name"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender"/>
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:hintTextColor="@color/lavender">
 
-            <EditText
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="First Name"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/lavender"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastNameInputLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/editText2"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="16dp"
-                android:hint="Last Name"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender"/>
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:hintTextColor="@color/lavender">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/lavender"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:id="@+id/button1"
@@ -67,13 +88,22 @@
                 android:layout_height="60dp"
                 android:text="Save"
                 android:textSize="18sp"
+                android:background="@drawable/lavender_border"
                 android:layout_marginTop="20dp"
                 app:cornerRadius="30dp"/>
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:textSize="18sp"
+                android:text="View Details"/>
 
         </LinearLayout>
-
-
     </androidx.cardview.widget.CardView>
 
-</ScrollView>
+
+
+</RelativeLayout>
